@@ -5,11 +5,11 @@ import ColorRow from "@/components/ColorRow.vue";
 import Color from "@/components/Color.vue";
 import EditableColor from "@/components/EditableColor.vue";
 const baseColor = ref(chroma.random())
-const baseGrays = ref(["#333333", "#7a7a7a", "#999999", "#b5b5b5", "#d4d4d4", "#eaeaea", "#f8f8f8"])
+const baseGrays = ref(["#1c1c1c", "#777777", "#b5b5b5", "#e3e3e3", "#f6f6f6"])
 const grays = ref(baseGrays.value.map((g) => chroma(g)))
 const baseShades = computed(() => grays.value.map((g) => baseColor.value.luminance(g.luminance())))
-const colorSpaces = ["rgb", "hsl", "lab", "lch", "lrgb"]
-const grayRatio = ref(0.8)
+const colorSpaces = ["hsl", "rgb", "lab", "lch", "lrgb"]
+const grayRatio = ref(0.9)
 
 function resetGray() {
   grays.value = baseGrays.value.map((g) => chroma(g))
